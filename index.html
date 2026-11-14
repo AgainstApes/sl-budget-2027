@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="A plain-language, fact-checked guide to Sri Lanka's proposed 2027 budget.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f6f3">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121715">
 <style>body{margin:0}img{max-width:100%}</style>
 </head>
 <body>
@@ -32,82 +35,109 @@
   --ok-bg:#173d30; --ok-fg:#a6e3c9; --warn-bg:#4a3410; --warn-fg:#ffd591; --bad-bg:#4d1c26; --bad-fg:#ffb9c4; --unk-bg:#2c3531; --unk-fg:#c5cec9;
   color-scheme:dark }
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font:16px/1.55 var(--body);margin:0}
-.wrap{max-width:920px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.08}
-h1{font-size:clamp(2.4rem,8vw,4.4rem);font-weight:800;font-stretch:80%;letter-spacing:-.01em}
-h2{font-size:clamp(1.5rem,4.5vw,2.1rem);font-weight:700;font-stretch:85%}
-h3{font-size:1.05rem;font-weight:700}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--ink);font:1.0625rem/1.6 var(--body);margin:0}
+::selection{background:var(--ink);color:var(--bg)}
+.wrap{max-width:720px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+h1{font-size:clamp(2.2rem,6.5vw,3.4rem);font-weight:750;font-stretch:85%;letter-spacing:-.015em}
+h2{font-size:clamp(1.45rem,4.2vw,1.9rem);font-weight:700;font-stretch:88%;letter-spacing:-.005em}
+h3{font-size:1.05rem;font-weight:650;line-height:1.3}
 p{margin:0;max-width:66ch}
-a{color:var(--accent)}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.eyebrow{font:700 .78rem var(--body);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
-.muted{color:var(--muted)} .small{font-size:.87rem}
-section{display:flex;flex-direction:column;gap:16px}
-header{display:flex;flex-direction:column;gap:14px;border-bottom:3px solid var(--ink);padding-bottom:22px}
-.lede{font-size:1.15rem}
-.status{background:var(--warn-bg);color:var(--warn-fg);padding:12px 14px;font-weight:600;max-width:none}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px;touch-action:manipulation}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.muted{color:var(--muted)} .small{font-size:.875rem;line-height:1.55}
+section{display:flex;flex-direction:column;gap:16px;scroll-margin-top:16px}
+section+section{border-top:1px solid var(--line);padding-top:40px}
+section>h3{margin-top:12px}
+header{display:flex;flex-direction:column;gap:16px}
+.lede{font-size:1.2rem;line-height:1.5}
+.status{background:var(--warn-bg);color:var(--warn-fg);padding:14px 16px;border-radius:6px;max-width:none}
 .num{font-variant-numeric:tabular-nums}
+/* page contents */
+.toc{display:flex;flex-wrap:wrap;gap:0 20px;font-size:.9rem;border-block:1px solid var(--line);padding-block:6px}
+.toc a{color:var(--muted);text-decoration:none;padding-block:6px}
+.toc a:active{color:var(--ink)}
 /* bars */
-.bars{display:flex;flex-direction:column;gap:14px}
-.bar-row{display:flex;flex-direction:column;gap:4px}
-.bar-label{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-weight:600}
-.bar-label b{font-family:var(--display);font-size:1.25rem}
-.track{display:flex;height:30px;background:var(--line)}
+.bars{display:flex;flex-direction:column;gap:16px}
+.bar-row{display:flex;flex-direction:column;gap:6px}
+.bar-label{display:flex;justify-content:space-between;align-items:baseline;gap:4px 16px;flex-wrap:wrap}
+.bar-label b{font-family:var(--display);font-size:1.1rem;font-weight:650;font-variant-numeric:tabular-nums}
+.bar-label b .muted{font-weight:500}
+.track{display:flex;height:18px;background:var(--line);border-radius:2px;overflow:hidden}
 .track i{display:block;height:100%}
-.hatch{background-image:repeating-linear-gradient(135deg,transparent 0 5px,var(--panel) 5px 8px)}
+.hatch{background-image:repeating-linear-gradient(135deg,transparent 0 4px,var(--bg) 4px 7px)}
 /* Rs 100 strips */
-.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
-.duo>div{min-width:0;display:flex;flex-direction:column;gap:10px}
-.strip{display:flex;height:44px}
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
+.duo>div{min-width:0;display:flex;flex-direction:column;gap:12px}
+.strip{display:flex;height:26px;border-radius:2px;overflow:hidden}
 .strip i{display:block;height:100%;border-right:2px solid var(--bg)}
 .strip i:last-child{border-right:0}
-.key{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
-.key li{display:grid;grid-template-columns:14px 3.6rem 1fr;gap:8px;align-items:baseline}
-.key s{width:14px;height:14px;display:block;align-self:center;text-decoration:none}
-.key b{font-family:var(--display);font-size:1.1rem}
-/* change list */
-.changes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0 28px}
-.changes>div{min-width:0;border-top:1px solid var(--line);padding-block:12px;display:flex;flex-direction:column;gap:3px}
-.when{font-size:.8rem;font-weight:700;color:var(--accent);letter-spacing:.03em}
+.key{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.key li{display:grid;grid-template-columns:12px 3.4rem minmax(0,1fr);gap:10px;align-items:baseline;font-size:.95rem;line-height:1.5}
+.key s{width:12px;height:12px;border-radius:2px;display:block;align-self:start;margin-top:.42em;text-decoration:none}
+.key b{font-family:var(--display);font-size:1.02rem;font-weight:650;font-variant-numeric:tabular-nums}
+/* change list: date on the left, change on the right, like a timetable */
+.changes{display:flex;flex-direction:column}
+.changes>div{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:2px 24px;border-top:1px solid var(--line);padding-block:14px}
+.changes>div:last-child{border-bottom:1px solid var(--line)}
+.when{grid-row:1/3;font-size:.875rem;color:var(--muted);padding-top:.12em}
+.changes h3,.changes h3+span{grid-column:2}
+@media (max-width:560px){ .changes>div{grid-template-columns:minmax(0,1fr)} .when{grid-row:auto;padding-top:0} .changes h3,.changes h3+span{grid-column:1} }
+/* tables */
 .scroll{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
-th,td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
-th:first-child,td:first-child{text-align:left}
-th{font-size:.8rem;color:var(--muted);font-weight:700}
-td.save{font-weight:700;color:var(--in)}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:.95rem}
+th,td{text-align:right;padding:9px 0 9px 20px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:baseline}
+th:first-child,td:first-child{text-align:left;padding-left:0;white-space:normal}
+th{font-size:.8rem;line-height:1.3;color:var(--muted);font-weight:600;vertical-align:bottom;border-bottom-color:var(--muted);white-space:normal}
+table.nums td:first-child{white-space:nowrap}
+@media (max-width:560px){ th,td{padding-left:12px} }
+td.save{font-weight:650;color:var(--in)}
 /* fine print */
-.fine{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:0 28px}
-.fine li{min-width:0;border-top:1px solid var(--line);padding-block:12px}
-.fine b{display:block}
+.fine{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 32px}
+.fine li{min-width:0;border-top:1px solid var(--line);padding-block:14px;font-size:.95rem;line-height:1.55}
+.fine b{display:block;margin-bottom:2px;font-size:1rem;line-height:1.35}
 /* fact check */
 .checks{display:flex;flex-direction:column}
-.check{display:grid;grid-template-columns:7.5rem 1fr;gap:6px 16px;border-top:1px solid var(--line);padding-block:14px}
+.check{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:8px 16px;border-top:1px solid var(--line);padding-block:16px}
 .check>div{min-width:0;display:flex;flex-direction:column;gap:4px}
-.chip{justify-self:start;align-self:start;font-size:.78rem;font-weight:700;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.chip{justify-self:start;align-self:start;font-size:.78rem;font-weight:650;line-height:1.3;padding:5px 12px;border-radius:99px;white-space:nowrap}
 .ok{background:var(--ok-bg);color:var(--ok-fg)} .warn{background:var(--warn-bg);color:var(--warn-fg)} .bad{background:var(--bad-bg);color:var(--bad-fg)} .unk{background:var(--unk-bg);color:var(--unk-fg)}
-.claim{font-weight:700}
-.src{font-size:.82rem;color:var(--muted);margin-top:2px}
-.src b{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;margin-right:8px}
-.src a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px}
-.src a:hover{color:var(--accent);text-decoration-color:currentColor}
-@media (max-width:520px){ .check{grid-template-columns:1fr} }
-.panel{background:var(--panel);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:8px}
-footer{border-top:3px solid var(--ink);padding-top:18px;display:flex;flex-direction:column;gap:10px}
+.claim{font-weight:650}
+.src{font-size:.82rem;line-height:1.45;color:var(--muted);margin-top:2px}
+.src b{font-weight:600;margin-right:8px}
+.src a{color:inherit;text-decoration-color:var(--line)}
+@media (max-width:520px){ .check{grid-template-columns:minmax(0,1fr)} }
+footer{border-top:1px solid var(--line);padding-top:40px;display:flex;flex-direction:column;gap:12px;scroll-margin-top:16px}
 footer ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:4px}
+/* hover only where a real pointer exists, so taps on phones do not leave it stuck */
+@media (hover:hover) and (pointer:fine){
+  .toc a:hover{color:var(--ink);text-decoration:underline}
+  .src a:hover{color:var(--accent);text-decoration-color:currentColor}
+  tr:hover>td{background:color-mix(in srgb,var(--line) 35%,transparent)}
+}
 </style>
 
 <div class="wrap">
 
 <header>
-  <div class="eyebrow">Plain-language guide · Independent summary, not a government publication</div>
   <h1>Sri Lanka Budget 2027</h1>
   <p class="lede">The government plans to collect <b>Rs 6.18 trillion</b>, spend <b>Rs 7.67 trillion</b>, and borrow the difference. Here is what that means, what changes for you, and which claims in the news hold up.</p>
-  <p class="status">This is a plan, not law yet. President Anura Kumara Dissanayake, who is also Finance Minister, presented it on 12 November 2026. Parliament votes on 20 November, with the final vote on 14 December. Details can still change.</p>
-  <p class="small muted">Every figure here was checked against the official Budget Speech and its annexures unless marked otherwise. 1 trillion = 1,000 billion. Checked on 14 November 2026.</p>
+  <p class="status"><b>This is a plan, not law yet.</b> President Anura Kumara Dissanayake, who is also Finance Minister, presented it on 12 November 2026. Parliament votes on 20 November, with the final vote on 14 December. Details can still change.</p>
+  <p class="small muted">A plain-language guide. Independent summary, not a government publication. Every figure here was checked against the official Budget Speech and its annexures unless marked otherwise. 1 trillion = 1,000 billion. Checked on 14 November 2026.</p>
+  <nav class="toc" aria-label="On this page">
+    <a href="#overview">The whole budget</a>
+    <a href="#rs-100">Rs 100 note</a>
+    <a href="#changes">What changes for you</a>
+    <a href="#trend">Three years</a>
+    <a href="#ministries">Ministries</a>
+    <a href="#fine-print">Fine print</a>
+    <a href="#fact-check">Headlines checked</a>
+    <a href="#sources">Sources</a>
+  </nav>
 </header>
 
-<section>
+<section id="overview">
   <h2>The whole budget in three bars</h2>
   <div class="bars">
     <div class="bar-row">
@@ -127,7 +157,7 @@ footer ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:4p
   <p class="small muted">Bars are drawn to the same scale. Source: Budget Speech 2027, Annexure III.</p>
 </section>
 
-<section>
+<section id="rs-100">
   <h2>Think of it as a Rs 100 note</h2>
   <div class="duo">
     <div>
@@ -160,36 +190,36 @@ footer ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:4p
   <p>Interest alone takes about <b>Rs 43 of every Rs 100</b> the government collects. That is far lower than in 2022, when it took Rs 79, but it still leaves less for everything else.</p>
 </section>
 
-<section>
+<section id="changes">
   <h2>What changes for you</h2>
   <div class="changes">
-    <div><span class="when">FROM APRIL 2027</span><h3>Less income tax on salaries</h3><span>Monthly pay up to Rs 162,500 is tax free, up from Rs 150,000. Tax bands get wider and a new 12% band is added. See the table below.</span></div>
-    <div><span class="when">FROM APRIL 2027</span><h3>No VAT on books</h3><span>Exercise books, printed books, dictionaries and children's colouring books become VAT free.</span></div>
-    <div><span class="when">FROM 13 NOVEMBER 2026</span><h3>Lower import tax on some foods</h3><span>Sprats: Rs 100 down to Rs 10 a kilo. Maldive fish: Rs 302 down to Rs 10. Dried chillies: down by Rs 50. Shop prices may not fall by the same amount.</span></div>
-    <div><span class="when">FROM 13 NOVEMBER 2026</span><h3>Higher import tax on sugar</h3><span>Up by Rs 10 a kilo, to protect local sugar producers.</span></div>
-    <div><span class="when">DURING 2027</span><h3>Public servants</h3><span>The last of three steps of the pay rise announced in 2025 is paid. Rs 110 billion is set aside. This is not a new raise.</span></div>
-    <div><span class="when">MOSTLY FROM JULY 2027</span><h3>Higher allowances for some jobs</h3><span>Doctors, nurses and other health staff, police, armed forces, prison officers, university lecturers and judges. Grama Niladharis and other field officers from April. Health, lecturer and judicial increases are paid half in 2027 and half in 2028.</span></div>
-    <div><span class="when">FROM 1 JULY 2027</span><h3>Some pensioners</h3><span>Rs 2,500 a month extra, only for people who retired between 2020 and 2024. It stops once their pensions are recalculated, planned to start in 2028.</span></div>
-    <div><span class="when">2027</span><h3>Welfare</h3><span>Rs 230 billion for Aswesuma and related payments. Allowances for kidney patients and people with disabilities rise from Rs 10,000 to Rs 12,500 a month.</span></div>
-    <div><span class="when">2027</span><h3>Loans and solar</h3><span>Rs 174 billion in low-interest loans for small businesses, farmers, fishers and women-headed households. Households that newly install rooftop solar with battery storage get a subsidy of Rs 25,000 per kW of battery, up to Rs 250,000.</span></div>
-    <div><span class="when">2027</span><h3>Sri Lankans abroad</h3><span>Free dual citizenship for the spouse, children and third-generation children of applicants. Housing loans up to Rs 5 million for migrant workers with part of the interest paid by the state.</span></div>
+    <div><span class="when">From April 2027</span><h3>Less income tax on salaries</h3><span>Monthly pay up to Rs 162,500 is tax free, up from Rs 150,000. Tax bands get wider and a new 12% band is added. See the table below.</span></div>
+    <div><span class="when">From April 2027</span><h3>No VAT on books</h3><span>Exercise books, printed books, dictionaries and children's colouring books become VAT free.</span></div>
+    <div><span class="when">From 13 November 2026</span><h3>Lower import tax on some foods</h3><span>Sprats: Rs 100 down to Rs 10 a kilo. Maldive fish: Rs 302 down to Rs 10. Dried chillies: down by Rs 50. Shop prices may not fall by the same amount.</span></div>
+    <div><span class="when">From 13 November 2026</span><h3>Higher import tax on sugar</h3><span>Up by Rs 10 a kilo, to protect local sugar producers.</span></div>
+    <div><span class="when">During 2027</span><h3>Public servants</h3><span>The last of three steps of the pay rise announced in 2025 is paid. Rs 110 billion is set aside. This is not a new raise.</span></div>
+    <div><span class="when">Mostly from July 2027</span><h3>Higher allowances for some jobs</h3><span>Doctors, nurses and other health staff, police, armed forces, prison officers, university lecturers and judges. Grama Niladharis and other field officers from April. Health, lecturer and judicial increases are paid half in 2027 and half in 2028.</span></div>
+    <div><span class="when">From 1 July 2027</span><h3>Some pensioners</h3><span>Rs 2,500 a month extra, only for people who retired between 2020 and 2024. It stops once their pensions are recalculated, planned to start in 2028.</span></div>
+    <div><span class="when">During 2027</span><h3>Welfare</h3><span>Rs 230 billion for Aswesuma and related payments. Allowances for kidney patients and people with disabilities rise from Rs 10,000 to Rs 12,500 a month.</span></div>
+    <div><span class="when">During 2027</span><h3>Loans and solar</h3><span>Rs 174 billion in low-interest loans for small businesses, farmers, fishers and women-headed households. Households that newly install rooftop solar with battery storage get a subsidy of Rs 25,000 per kW of battery, up to Rs 250,000.</span></div>
+    <div><span class="when">During 2027</span><h3>Sri Lankans abroad</h3><span>Free dual citizenship for the spouse, children and third-generation children of applicants. Housing loans up to Rs 5 million for migrant workers with part of the interest paid by the state.</span></div>
   </div>
 
   <h3>How much income tax you would save each month</h3>
-  <div class="scroll"><table>
+  <div class="scroll"><table class="nums">
     <tr><th>Monthly salary</th><th>Tax now</th><th>Tax from April 2027</th><th>You keep</th></tr>
-    <tr><td>Rs 150,000 or less</td><td>0</td><td>0</td><td class="save">0</td></tr>
+    <tr><td>Rs 150,000</td><td>0</td><td>0</td><td class="save">0</td></tr>
     <tr><td>Rs 160,000</td><td>600</td><td>0</td><td class="save">+600</td></tr>
     <tr><td>Rs 200,000</td><td>3,000</td><td>2,250</td><td class="save">+750</td></tr>
     <tr><td>Rs 250,000</td><td>8,000</td><td>6,250</td><td class="save">+1,750</td></tr>
     <tr><td>Rs 300,000</td><td>18,500</td><td>13,250</td><td class="save">+5,250</td></tr>
     <tr><td>Rs 400,000</td><td>50,000</td><td>36,250</td><td class="save">+13,750</td></tr>
-    <tr><td>Rs 500,000 and above</td><td>86,000 at 500,000</td><td>70,250 at 500,000</td><td class="save">+15,750</td></tr>
+    <tr><td>Rs 500,000</td><td>86,000</td><td>70,250</td><td class="save">+15,750</td></tr>
   </table></div>
-  <p class="small muted">Our own calculation from the tax rates in the speech's Technical Note. It matches the range the speech gives (Rs 750 to Rs 15,750). It assumes salary is your only income. The 36% top rate would start at about Rs 433,000 a month instead of Rs 358,000.</p>
+  <p class="small muted">Our own calculation from the tax rates in the speech's Technical Note. It matches the range the speech gives (Rs 750 to Rs 15,750). It assumes salary is your only income. Above about Rs 433,000 a month the saving stays at Rs 15,750. The 36% top rate would start at about Rs 433,000 a month instead of Rs 358,000.</p>
 </section>
 
-<section>
+<section id="trend">
   <h2>Three years side by side</h2>
   <div class="scroll"><table>
     <tr><th>Rs billion</th><th>2025 actual</th><th>2026 revised</th><th>2027 plan</th></tr>
@@ -204,7 +234,7 @@ footer ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:4p
   <p class="small muted">2025 figures are provisional. 2027 excludes the Rs 260 billion cyclone request. Source: Annexure III.</p>
 </section>
 
-<section>
+<section id="ministries">
   <h2>Ministry by ministry</h2>
   <p>Parliament votes on <b>Rs 4,993 billion</b> of spending, split between ministries. The solid part of each bar is running costs such as salaries and supplies. The striped part is capital: building and equipment.</p>
   <div class="bars">
@@ -266,7 +296,7 @@ footer ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:4p
   <p class="small muted">All figures read directly from the First and Second Schedules of the Appropriation Bill. The 27 groups add up exactly to the bill's total of Rs 4,992,773,388,000.</p>
 </section>
 
-<section>
+<section id="fine-print">
   <h2>Read the fine print</h2>
   <p>These points are in the official document but are easy to miss in headlines.</p>
   <ul class="fine">
@@ -286,7 +316,7 @@ footer ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:4p
   </ul>
 </section>
 
-<section>
+<section id="fact-check">
   <h2>We checked the headlines</h2>
   <p>News reports gave different numbers for the same budget. We compared each claim with the official Budget Speech. The headline each claim came from is linked below it.</p>
   <div class="checks">
@@ -300,8 +330,8 @@ footer ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:4p
     <div class="check"><span class="chip warn">Needs context</span><div><span class="claim">"Government spending for 2027 is Rs 4.99 trillion."</span><span>This is the amount in the Appropriation Bill, the part of spending Parliament approves ministry by ministry (Rs 3,240 billion running costs plus Rs 1,753 billion capital). It is smaller than the Rs 7.67 trillion total because it leaves out costs paid under other laws, chiefly interest on debt. We confirmed the figure in the bill itself.</span><span class="src"><b>Sunday Times</b><a href="https://www.sundaytimes.lk/260927/news/appropriation-bill-2027-npp-estimates-expenditure-at-over-rs-4992-billion-658465.html">Appropriation Bill 2027: NPP estimates expenditure at over Rs. 4992 billion</a></span></div></div>  </div>
 </section>
 
-<footer>
-  <h3>Sources and method</h3>
+<footer id="sources">
+  <h2>Sources and method</h2>
   <p class="small">Main source: the official Budget Speech 2027, English text. Every figure on this page was read in the speech itself, in these parts: the opening and fiscal targets (sections 1 to 3), social protection (section 20), salaries, pensions, tax and borrowing (sections 35 to 38), the passages on highways, loans and solar batteries, Annexures I to IV, and the tax part of Annexure V. The other sector chapters were not read line by line and are not summarised here. We read the Treasury's own copy. News reports were used to find claims, and each claim was then compared with the speech. Ministry figures come from the Appropriation Bill for 2027, and the 2026 comparisons and economic assumptions from the Treasury's Draft Budget Estimates 2027 (Volume I summary tables only; the three volumes run to about 1,470 pages and were not read in full). Debate and vote dates come from Parliament's published programme.</p>
   <ul class="small">
     <li><a href="https://www.treasury.gov.lk/web/budget-speeches/section/2027">Budget Speech 2027, Treasury</a></li>
