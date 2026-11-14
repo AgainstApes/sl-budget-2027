@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="A plain-language, fact-checked guide to Sri Lanka's proposed 2027 budget.">
+<style>body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Sri Lanka Budget 2027</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Public+Sans:wght@400;600;700&display=swap">
+<style>
+/* Layout: one reading column, like a public notice. Each section answers one plain question; charts are flat bars drawn to one scale. */
+:root{
+  --bg:#f4f6f3; --panel:#ffffff; --ink:#18201c; --muted:#56615b; --line:#d5dbd6;
+  --in:#1d7355; --out:#8a1f33; --gap:#c9730a; --accent:#8a1f33;
+  --c1:#8a1f33; --c2:#c9730a; --c3:#1d7355; --c4:#2c5f8f; --c5:#7b8580;
+  --ok-bg:#dcefe6; --ok-fg:#12543d; --warn-bg:#fbe9c9; --warn-fg:#7a4300; --bad-bg:#f6d9dd; --bad-fg:#7c1528; --unk-bg:#e4e8e5; --unk-fg:#3f4944;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif; --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#121715; --panel:#1b2220; --ink:#e9eeeb; --muted:#a3aea8; --line:#34403b;
+  --in:#4fb690; --out:#e0667b; --gap:#f0a23c; --accent:#e9889a;
+  --c1:#e0667b; --c2:#f0a23c; --c3:#4fb690; --c4:#74a9dc; --c5:#8f9a94;
+  --ok-bg:#173d30; --ok-fg:#a6e3c9; --warn-bg:#4a3410; --warn-fg:#ffd591; --bad-bg:#4d1c26; --bad-fg:#ffb9c4; --unk-bg:#2c3531; --unk-fg:#c5cec9;
+  color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#121715; --panel:#1b2220; --ink:#e9eeeb; --muted:#a3aea8; --line:#34403b;
+  --in:#4fb690; --out:#e0667b; --gap:#f0a23c; --accent:#e9889a;
+  --c1:#e0667b; --c2:#f0a23c; --c3:#4fb690; --c4:#74a9dc; --c5:#8f9a94;
+  --ok-bg:#173d30; --ok-fg:#a6e3c9; --warn-bg:#4a3410; --warn-fg:#ffd591; --bad-bg:#4d1c26; --bad-fg:#ffb9c4; --unk-bg:#2c3531; --unk-fg:#c5cec9;
+  color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 var(--body);margin:0}
+.wrap{max-width:920px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.08}
+h1{font-size:clamp(2.4rem,8vw,4.4rem);font-weight:800;font-stretch:80%;letter-spacing:-.01em}
+h2{font-size:clamp(1.5rem,4.5vw,2.1rem);font-weight:700;font-stretch:85%}
+h3{font-size:1.05rem;font-weight:700}
+p{margin:0;max-width:66ch}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font:700 .78rem var(--body);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)} .small{font-size:.87rem}
+section{display:flex;flex-direction:column;gap:16px}
+header{display:flex;flex-direction:column;gap:14px;border-bottom:3px solid var(--ink);padding-bottom:22px}
+.lede{font-size:1.15rem}
+.status{background:var(--warn-bg);color:var(--warn-fg);padding:12px 14px;font-weight:600;max-width:none}
+.num{font-variant-numeric:tabular-nums}
+/* bars */
+.bars{display:flex;flex-direction:column;gap:14px}
+.bar-row{display:flex;flex-direction:column;gap:4px}
+.bar-label{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-weight:600}
+.bar-label b{font-family:var(--display);font-size:1.25rem}
+.track{display:flex;height:30px;background:var(--line)}
+.track i{display:block;height:100%}
+.hatch{background-image:repeating-linear-gradient(135deg,transparent 0 5px,var(--panel) 5px 8px)}
+/* Rs 100 strips */
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.duo>div{min-width:0;display:flex;flex-direction:column;gap:10px}
+.strip{display:flex;height:44px}
+.strip i{display:block;height:100%;border-right:2px solid var(--bg)}
+.strip i:last-child{border-right:0}
+.key{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.key li{display:grid;grid-template-columns:14px 3.6rem 1fr;gap:8px;align-items:baseline}
+.key s{width:14px;height:14px;display:block;align-self:center;text-decoration:none}
+.key b{font-family:var(--display);font-size:1.1rem}
+/* change list */
+.changes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0 28px}
+.changes>div{min-width:0;border-top:1px solid var(--line);padding-block:12px;display:flex;flex-direction:column;gap:3px}
+.when{font-size:.8rem;font-weight:700;color:var(--accent);letter-spacing:.03em}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-size:.8rem;color:var(--muted);font-weight:700}
+td.save{font-weight:700;color:var(--in)}
+/* fine print */
+.fine{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:0 28px}
+.fine li{min-width:0;border-top:1px solid var(--line);padding-block:12px}
+.fine b{display:block}
+/* fact check */
+.checks{display:flex;flex-direction:column}
+.check{display:grid;grid-template-columns:7.5rem 1fr;gap:6px 16px;border-top:1px solid var(--line);padding-block:14px}
+.check>div{min-width:0;display:flex;flex-direction:column;gap:4px}
+.chip{justify-self:start;align-self:start;font-size:.78rem;font-weight:700;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.ok{background:var(--ok-bg);color:var(--ok-fg)} .warn{background:var(--warn-bg);color:var(--warn-fg)} .bad{background:var(--bad-bg);color:var(--bad-fg)} .unk{background:var(--unk-bg);color:var(--unk-fg)}
+.claim{font-weight:700}
+.src{font-size:.82rem;color:var(--muted);margin-top:2px}
+.src b{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;margin-right:8px}
+.src a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px}
+.src a:hover{color:var(--accent);text-decoration-color:currentColor}
+@media (max-width:520px){ .check{grid-template-columns:1fr} }
+.panel{background:var(--panel);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:8px}
+footer{border-top:3px solid var(--ink);padding-top:18px;display:flex;flex-direction:column;gap:10px}
+footer ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:4px}
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Plain-language guide · Independent summary, not a government publication</div>
+  <h1>Sri Lanka Budget 2027</h1>
+  <p class="lede">The government plans to collect <b>Rs 6.18 trillion</b>, spend <b>Rs 7.67 trillion</b>, and borrow the difference. Here is what that means, what changes for you, and which claims in the news hold up.</p>
+  <p class="status">This is a plan, not law yet. President Anura Kumara Dissanayake, who is also Finance Minister, presented it on 12 November 2026. Parliament votes on 20 November, with the final vote on 14 December. Details can still change.</p>
+  <p class="small muted">Every figure here was checked against the official Budget Speech and its annexures unless marked otherwise. 1 trillion = 1,000 billion. Checked on 14 November 2026.</p>
+</header>
+
+<section>
+  <h2>The whole budget in three bars</h2>
+  <div class="bars">
+    <div class="bar-row">
+      <div class="bar-label"><span>Money coming in (taxes, fees, grants)</span><b class="num">Rs 6,180 billion</b></div>
+      <div class="track"><i style="width:77.9%;background:var(--in)"></i></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label"><span>Money going out</span><b class="num">Rs 7,673 billion <span class="muted">+ 260 cyclone</span></b></div>
+      <div class="track"><i style="width:96.7%;background:var(--out)"></i><i class="hatch" style="width:3.3%;background-color:var(--out)"></i></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label"><span>The gap, covered by borrowing</span><b class="num">Rs 1,493 billion <span class="muted">+ 260 cyclone</span></b></div>
+      <div class="track"><i style="width:18.8%;background:var(--gap)"></i><i class="hatch" style="width:3.3%;background-color:var(--gap)"></i></div>
+    </div>
+  </div>
+  <p>The gap is called the <b>budget deficit</b>. It equals 3.8% of everything the country produces in a year (GDP). The striped part is a separate Rs 260 billion request to finish rebuilding after Cyclone Ditwah. With it, spending is Rs 7,933 billion and the gap is Rs 1,753 billion, or 4.5% of GDP.</p>
+  <p class="small muted">Bars are drawn to the same scale. Source: Budget Speech 2027, Annexure III.</p>
+</section>
+
+<section>
+  <h2>Think of it as a Rs 100 note</h2>
+  <div class="duo">
+    <div>
+      <h3>Out of every Rs 100 the government spends</h3>
+      <div class="strip" role="img" aria-label="Spending shares: interest 34, public investment 23, subsidies and welfare 19, salaries 18, other 5">
+        <i style="width:34.4%;background:var(--c1)"></i><i style="width:22.8%;background:var(--c4)"></i><i style="width:19.2%;background:var(--c3)"></i><i style="width:18.3%;background:var(--c2)"></i><i style="width:5.3%;background:var(--c5)"></i>
+      </div>
+      <ul class="key">
+        <li><s style="background:var(--c1)"></s><b class="num">Rs 34</b><span>Interest on past loans. The single biggest cost.</span></li>
+        <li><s style="background:var(--c4)"></s><b class="num">Rs 23</b><span>Building things: roads, railways, hospitals, schools, water.</span></li>
+        <li><s style="background:var(--c3)"></s><b class="num">Rs 19</b><span>Subsidies and payments to people, including pensions and Aswesuma.</span></li>
+        <li><s style="background:var(--c2)"></s><b class="num">Rs 18</b><span>Salaries of public servants.</span></li>
+        <li><s style="background:var(--c5)"></s><b class="num">Rs 5</b><span>Running costs: supplies, fuel, services.</span></li>
+      </ul>
+      <p class="small muted">Rounded, so the parts add to Rs 99.</p>
+    </div>
+    <div>
+      <h3>Out of every Rs 100 the government collects</h3>
+      <div class="strip" role="img" aria-label="Income shares: taxes on goods and services 58, income tax 22, import and export taxes 12, other 8">
+        <i style="width:58.1%;background:var(--c3)"></i><i style="width:21.7%;background:var(--c4)"></i><i style="width:12.2%;background:var(--c2)"></i><i style="width:8%;background:var(--c5)"></i>
+      </div>
+      <ul class="key">
+        <li><s style="background:var(--c3)"></s><b class="num">Rs 58</b><span>Taxes on what you buy, such as VAT and excise. Everyone pays these, rich or poor.</span></li>
+        <li><s style="background:var(--c4)"></s><b class="num">Rs 22</b><span>Income tax from people and companies.</span></li>
+        <li><s style="background:var(--c2)"></s><b class="num">Rs 12</b><span>Taxes on imports and exports.</span></li>
+        <li><s style="background:var(--c5)"></s><b class="num">Rs 8</b><span>Fees, profits from state bodies, and foreign grants.</span></li>
+      </ul>
+    </div>
+  </div>
+  <p>Interest alone takes about <b>Rs 43 of every Rs 100</b> the government collects. That is far lower than in 2022, when it took Rs 79, but it still leaves less for everything else.</p>
+</section>
+
+<section>
+  <h2>What changes for you</h2>
+  <div class="changes">
+    <div><span class="when">FROM APRIL 2027</span><h3>Less income tax on salaries</h3><span>Monthly pay up to Rs 162,500 is tax free, up from Rs 150,000. Tax bands get wider and a new 12% band is added. See the table below.</span></div>
+    <div><span class="when">FROM APRIL 2027</span><h3>No VAT on books</h3><span>Exercise books, printed books, dictionaries and children's colouring books become VAT free.</span></div>
+    <div><span class="when">FROM 13 NOVEMBER 2026</span><h3>Lower import tax on some foods</h3><span>Sprats: Rs 100 down to Rs 10 a kilo. Maldive fish: Rs 302 down to Rs 10. Dried chillies: down by Rs 50. Shop prices may not fall by the same amount.</span></div>
+    <div><span class="when">FROM 13 NOVEMBER 2026</span><h3>Higher import tax on sugar</h3><span>Up by Rs 10 a kilo, to protect local sugar producers.</span></div>
+    <div><span class="when">DURING 2027</span><h3>Public servants</h3><span>The last of three steps of the pay rise announced in 2025 is paid. Rs 110 billion is set aside. This is not a new raise.</span></div>
+    <div><span class="when">MOSTLY FROM JULY 2027</span><h3>Higher allowances for some jobs</h3><span>Doctors, nurses and other health staff, police, armed forces, prison officers, university lecturers and judges. Grama Niladharis and other field officers from April. Health, lecturer and judicial increases are paid half in 2027 and half in 2028.</span></div>
+    <div><span class="when">FROM 1 JULY 2027</span><h3>Some pensioners</h3><span>Rs 2,500 a month extra, only for people who retired between 2020 and 2024. It stops once their pensions are recalculated, planned to start in 2028.</span></div>
+    <div><span class="when">2027</span><h3>Welfare</h3><span>Rs 230 billion for Aswesuma and related payments. Allowances for kidney patients and people with disabilities rise from Rs 10,000 to Rs 12,500 a month.</span></div>
+    <div><span class="when">2027</span><h3>Loans and solar</h3><span>Rs 174 billion in low-interest loans for small businesses, farmers, fishers and women-headed households. Households that newly install rooftop solar with battery storage get a subsidy of Rs 25,000 per kW of battery, up to Rs 250,000.</span></div>
+    <div><span class="when">2027</span><h3>Sri Lankans abroad</h3><span>Free dual citizenship for the spouse, children and third-generation children of applicants. Housing loans up to Rs 5 million for migrant workers with part of the interest paid by the state.</span></div>
+  </div>
+
+  <h3>How much income tax you would save each month</h3>
+  <div class="scroll"><table>
+    <tr><th>Monthly salary</th><th>Tax now</th><th>Tax from April 2027</th><th>You keep</th></tr>
+    <tr><td>Rs 150,000 or less</td><td>0</td><td>0</td><td class="save">0</td></tr>
+    <tr><td>Rs 160,000</td><td>600</td><td>0</td><td class="save">+600</td></tr>
+    <tr><td>Rs 200,000</td><td>3,000</td><td>2,250</td><td class="save">+750</td></tr>
+    <tr><td>Rs 250,000</td><td>8,000</td><td>6,250</td><td class="save">+1,750</td></tr>
+    <tr><td>Rs 300,000</td><td>18,500</td><td>13,250</td><td class="save">+5,250</td></tr>
+    <tr><td>Rs 400,000</td><td>50,000</td><td>36,250</td><td class="save">+13,750</td></tr>
+    <tr><td>Rs 500,000 and above</td><td>86,000 at 500,000</td><td>70,250 at 500,000</td><td class="save">+15,750</td></tr>
+  </table></div>
+  <p class="small muted">Our own calculation from the tax rates in the speech's Technical Note. It matches the range the speech gives (Rs 750 to Rs 15,750). It assumes salary is your only income. The 36% top rate would start at about Rs 433,000 a month instead of Rs 358,000.</p>
+</section>
+
+<section>
+  <h2>Three years side by side</h2>
+  <div class="scroll"><table>
+    <tr><th>Rs billion</th><th>2025 actual</th><th>2026 revised</th><th>2027 plan</th></tr>
+    <tr><td>Money in</td><td>5,486</td><td>5,981</td><td>6,180</td></tr>
+    <tr><td>Money out</td><td>6,230</td><td>7,309</td><td>7,673</td></tr>
+    <tr><td>Gap (deficit)</td><td>745</td><td>1,328</td><td>1,493</td></tr>
+    <tr><td>Gap as share of GDP</td><td>2.3%</td><td>3.7%</td><td>3.8%</td></tr>
+    <tr><td>Money in as share of GDP</td><td>16.7%</td><td>16.6%</td><td>15.8%</td></tr>
+    <tr><td>Interest paid</td><td>2,501</td><td>2,617</td><td>2,643</td></tr>
+    <tr><td>Spending on building things</td><td>1,016</td><td>1,480</td><td>1,750</td></tr>
+  </table></div>
+  <p class="small muted">2025 figures are provisional. 2027 excludes the Rs 260 billion cyclone request. Source: Annexure III.</p>
+</section>
+
+<section>
+  <h2>Ministry by ministry</h2>
+  <p>Parliament votes on <b>Rs 4,993 billion</b> of spending, split between ministries. The solid part of each bar is running costs such as salaries and supplies. The striped part is capital: building and equipment.</p>
+  <div class="bars">
+    <div class="bar-row"><div class="bar-label"><span>Finance, Planning and Economic Development</span><b class="num">Rs 857 billion</b></div><div class="track"><i style="width:38.9%;background:var(--c4)"></i><i class="hatch" style="width:61.1%;background-color:var(--c4)"></i></div></div>
+    <div class="bar-row"><div class="bar-label"><span>Provincial Councils</span><b class="num">Rs 660 billion</b></div><div class="track"><i style="width:67.1%;background:var(--c4)"></i><i class="hatch" style="width:9.9%;background-color:var(--c4)"></i></div></div>
+    <div class="bar-row"><div class="bar-label"><span>Public Administration and Local Government</span><b class="num">Rs 651 billion</b></div><div class="track"><i style="width:71%;background:var(--c4)"></i><i class="hatch" style="width:5%;background-color:var(--c4)"></i></div></div>
+    <div class="bar-row"><div class="bar-label"><span>Health and Mass Media</span><b class="num">Rs 591 billion</b></div><div class="track"><i style="width:54.9%;background:var(--c4)"></i><i class="hatch" style="width:14%;background-color:var(--c4)"></i></div></div>
+    <div class="bar-row"><div class="bar-label"><span>Transport, Highways and Urban Development</span><b class="num">Rs 500 billion</b></div><div class="track"><i style="width:7.9%;background:var(--c4)"></i><i class="hatch" style="width:50.4%;background-color:var(--c4)"></i></div></div>
+    <div class="bar-row"><div class="bar-label"><span>Defence</span><b class="num">Rs 458 billion</b></div><div class="track"><i style="width:45.3%;background:var(--c4)"></i><i class="hatch" style="width:8.2%;background-color:var(--c4)"></i></div></div>
+    <div class="bar-row"><div class="bar-label"><span>Education, Higher Education and Vocational Education</span><b class="num">Rs 328 billion</b></div><div class="track"><i style="width:29.2%;background:var(--c4)"></i><i class="hatch" style="width:9.1%;background-color:var(--c4)"></i></div></div>
+    <div class="bar-row"><div class="bar-label"><span>Public Security and Parliamentary Affairs</span><b class="num">Rs 231 billion</b></div><div class="track"><i style="width:24.5%;background:var(--c4)"></i><i class="hatch" style="width:2.4%;background-color:var(--c4)"></i></div></div>
+    <div class="bar-row"><div class="bar-label"><span>Agriculture, Livestock, Land and Irrigation</span><b class="num">Rs 218 billion</b></div><div class="track"><i style="width:11.6%;background:var(--c4)"></i><i class="hatch" style="width:13.9%;background-color:var(--c4)"></i></div></div>
+  </div>
+  <h3>The other 18</h3>
+  <div class="scroll"><table>
+    <tr><th>Ministry or group</th><th>Rs billion</th></tr>
+    <tr><td>Housing, Construction and Water Supply</td><td>82.3</td></tr>
+    <tr><td>Rural Development, Social Security and Community Empowerment</td><td>79.8</td></tr>
+    <tr><td>Justice and National Integration</td><td>66.0</td></tr>
+    <tr><td>President, Prime Minister, Parliament, courts and commissions</td><td>39.8</td></tr>
+    <tr><td>Energy</td><td>30.2</td></tr>
+    <tr><td>Plantation and Community Infrastructure</td><td>26.0</td></tr>
+    <tr><td>Digital Economy</td><td>26.0</td></tr>
+    <tr><td>Foreign Affairs, Foreign Employment and Tourism</td><td>24.7</td></tr>
+    <tr><td>Environment</td><td>21.2</td></tr>
+    <tr><td>Women and Child Affairs</td><td>20.0</td></tr>
+    <tr><td>Buddhasasana, Religious and Cultural Affairs</td><td>18.0</td></tr>
+    <tr><td>Youth Affairs and Sports</td><td>17.0</td></tr>
+    <tr><td>Industry and Entrepreneurship Development</td><td>15.1</td></tr>
+    <tr><td>Fisheries, Aquatic and Ocean Resources</td><td>11.7</td></tr>
+    <tr><td>Science and Technology</td><td>7.6</td></tr>
+    <tr><td>Labour</td><td>7.5</td></tr>
+    <tr><td>Ports and Civil Aviation</td><td>3.7</td></tr>
+    <tr><td>Trade, Commerce, Food Security and Co-operative Development</td><td>3.4</td></tr>
+  </table></div>
+  <h3>Compared with 2026</h3>
+  <div class="scroll"><table>
+    <tr><th>Rs billion</th><th>2026 revised</th><th>2027 plan</th><th>Change</th></tr>
+    <tr><td>Health and Mass Media</td><td>556.7</td><td>590.5</td><td>+6%</td></tr>
+    <tr><td>Education</td><td>306.3</td><td>328.0</td><td>+7%</td></tr>
+    <tr><td>Public Security</td><td>221.0</td><td>230.5</td><td>+4%</td></tr>
+    <tr><td>Rural Development and Social Security</td><td>63.5</td><td>79.8</td><td>+26%</td></tr>
+    <tr><td>Housing, Construction and Water Supply</td><td>73.3</td><td>82.3</td><td>+12%</td></tr>
+    <tr><td>Provincial Councils</td><td>717.4</td><td>660.0</td><td>-8%</td></tr>
+    <tr><td>Transport, Highways and Urban Development</td><td>558.5</td><td>500.0</td><td>-10%</td></tr>
+    <tr><td>Agriculture, Livestock, Land and Irrigation</td><td>247.8</td><td>218.0</td><td>-12%</td></tr>
+    <tr><td>Defence</td><td>599.8</td><td>458.0</td><td>-24%</td></tr>
+    <tr><td>Energy</td><td>110.8</td><td>30.2</td><td>-73%</td></tr>
+  </table></div>
+  <p class="small muted">A fall does not always mean a cut to regular services. The 2026 figures include extra money Parliament approved during that year through five supplementary estimates, among them Rs 500 billion for cyclone rebuilding. Defence running costs, for example, rise slightly (Rs 384 billion to Rs 388 billion); the drop is in its capital line, which was Rs 216 billion in 2026 against Rs 56 billion spent in 2025. We did not trace what each one-off 2026 amount paid for. Source: Treasury Draft Budget Estimates 2027, Volume I, table 4.4.</p>
+  <ul class="fine">
+    <li><b>Debt costs are not in this list.</b>Rs 2,641 billion of interest and Rs 82 billion of widows' and orphans' pensions are paid under other laws, so Parliament does not vote on them here. That is why this total is smaller than the Rs 7.67 trillion budget.</li>
+    <li><b>The Finance Ministry is not spending this on itself.</b>Rs 362 billion of its total is a central pool held by the Department of National Budget for projects across government.</li>
+    <li><b>Public Administration is mostly pensions.</b>Rs 550 billion of its Rs 651 billion pays public service pensions.</li>
+    <li><b>Defence and police are separate lines.</b>Defence includes the Army (Rs 240 billion), Navy (Rs 97 billion) and Air Force (Rs 79 billion). The Police (Rs 167 billion) sit under Public Security.</li>
+    <li><b>Health and education are bigger than their ministry lines.</b>Provincial councils also run many hospitals and schools, paid from the Provincial Councils money.</li>
+    <li><b>These numbers can still move.</b>The bill was published in September 2026, before the Budget Speech. Parliament can change individual lines until the final vote on 14 December.</li>
+  </ul>
+  <p class="small muted">All figures read directly from the First and Second Schedules of the Appropriation Bill. The 27 groups add up exactly to the bill's total of Rs 4,992,773,388,000.</p>
+</section>
+
+<section>
+  <h2>Read the fine print</h2>
+  <p>These points are in the official document but are easy to miss in headlines.</p>
+  <ul class="fine">
+    <li><b>The tax-free limit rises by about as much as prices did.</b>The limit goes up 8.3%. Inflation was also 8.3% in October 2026. So the change mostly keeps pace with living costs.</li>
+    <li><b>One tax band gets smaller.</b>The lowest 6% band shrinks from Rs 1,000,000 to Rs 850,000 a year. Everyone still pays less overall because the next bands are wider and start at 12% instead of 18%.</li>
+    <li><b>The gap is growing for the third year.</b>The deficit was 2.3% of GDP in 2025. The plan for 2027 is 3.8%, or 4.5% with cyclone costs. The government's own limit is 5%.</li>
+    <li><b>Income falls short of the government's own goal.</b>The speech aims for revenue of at least 16% of GDP. The 2027 plan shows 15.8%.</li>
+    <li><b>The cyclone money is not new money.</b>The Rs 260 billion is the unspent part of Rs 500 billion Parliament already approved for Ditwah rebuilding. It will come from cash the Treasury holds.</li>
+    <li><b>Record building plans depend on delivery.</b>Rs 1,750 billion is planned for public investment, the highest so far. Plans are not always carried out in full. For 2026, ministries were allocated Rs 1,732 billion for capital projects, but the government now expects to spend Rs 1,480 billion, about 85%.</li>
+    <li><b>The numbers assume steady growth and calmer prices.</b>The Treasury's estimates assume the economy grows 4% to 5% in 2027 and that inflation returns to the 5% target by mid-2027. The 7% growth in the speech is a longer-term goal. If growth is weaker, tax income will fall short.</li>
+    <li><b>Some things become taxable.</b>Capital gains tax would cover crypto and other digital assets, telecom and broadcast licences, and gems, jewellery and precious metals above a limit yet to be set. VAT returns on coir pith.</li>
+    <li><b>Most borrowing repays old loans.</b>The borrowing limit is Rs 3,800 billion. Of that, Rs 2,207 billion goes to repaying loans that fall due. Only the deficit is new debt.</li>
+    <li><b>The IMF programme ends in March 2027.</b>A committee will advise on whether to enter a new one. Nothing is decided.</li>
+    <li><b>Prices and weather are the big risks.</b>Inflation rose from 2.1% in December 2025 to 8.3% in October 2026, driven by fuel costs from the Middle East war. An El Niño is expected to peak in February 2027, which can hurt harvests and hydropower.</li>
+    <li><b>The tax cuts are small next to the budget.</b>They cost Rs 28.4 billion in a full year, about half of one percent of what the government collects.</li>
+    <li><b>The tourism levy ends, but its replacement is undecided.</b>The Treasury will fund tourism promotion until a new method is designed.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>We checked the headlines</h2>
+  <p>News reports gave different numbers for the same budget. We compared each claim with the official Budget Speech. The headline each claim came from is linked below it.</p>
+  <div class="checks">
+    <div class="check"><span class="chip warn">Misleading</span><div><span class="claim">"Total government spending is Rs 9.92 trillion."</span><span>The number is real but it includes Rs 2,207 billion of repaying old loans, which is not spending on services. Spending is Rs 7,673 billion. (Annexure IV: 5,070 + 4,850 = 9,920.)</span><span class="src"><b>EconomyNext</b><a href="https://economynext.com/preview-sri-lanka-unveils-2027-budget-amid-oil-shocks-missing-mega-projects-eyes-next-imf-deal-289811/">PREVIEW-Sri Lanka unveils 2027 budget amid oil shocks, missing mega-projects, eyes next IMF deal</a></span><span class="src"><b>RegFollower</b><a href="https://regfollower.com/sri-lanka-unveils-2027-budget-with-energy-infrastructure-and-trade-focus/">Sri Lanka unveils 2027 budget with energy, infrastructure and trade focus</a></span></div></div>
+    <div class="check"><span class="chip bad">Wrong</span><div><span class="claim">"Revenue Rs 4.99 trillion, spending Rs 7.19 trillion, deficit Rs 2.2 trillion."</span><span>The official table says Rs 6.18 trillion in, Rs 7.67 trillion out, deficit Rs 1.49 trillion.</span><span class="src"><b>EconomyNext</b><a href="https://economynext.com/sri-lankas-2027-budget-unveils-middle-class-tax-relief-eyes-record-capital-spending-290046/">Sri Lanka's 2027 budget unveils middle class tax relief, eyes record capital spending</a></span></div></div>
+    <div class="check"><span class="chip warn">Needs context</span><div><span class="claim">"Salary increases and higher allowances for public sector employees."</span><span>The Rs 110 billion pays the last step of the raise announced in the 2025 budget. What is new in 2027 is higher allowances for specific jobs. The article itself explains this.</span><span class="src"><b>Newswire</b><a href="https://www.newswire.lk/2026/11/12/budget-2027-salary-increases-and-higher-allowances-for-public-sector-employees/">Budget 2027: Salary increases and higher allowances for public sector employees</a></span></div></div>
+    <div class="check"><span class="chip warn">Needs context</span><div><span class="claim">"A record Rs 487 billion for highways and railways."</span><span>The budget itself allocates Rs 251 billion. The Rs 487 billion total adds Rs 146 billion of new proposals and Rs 90 billion of cyclone repairs from the separate request.</span><span class="src"><b>EconomyNext</b><a href="https://economynext.com/sri-lankas-2027-budget-unveils-middle-class-tax-relief-eyes-record-capital-spending-290046/">Sri Lanka's 2027 budget unveils middle class tax relief, eyes record capital spending</a></span></div></div>
+    <div class="check"><span class="chip ok">True</span><div><span class="claim">"Spending is Rs 7.93 trillion and the deficit is Rs 1.75 trillion."</span><span>Correct once the Rs 260 billion cyclone request is included. Without it: Rs 7.67 trillion and Rs 1.49 trillion. Both versions are in the official table.</span><span class="src"><b>Ada Derana</b><a href="https://adaderana.lk/news/251637">Day two of debate on second reading of 2027 Budget in parliament today</a></span></div></div>
+    <div class="check"><span class="chip ok">True</span><div><span class="claim">"Tax concessions cost nearly Rs 29 billion" and "revenue falls by Rs 21,150 million."</span><span>Both are right. The first is the full-year cost (Rs 28.4 billion). The second is the cost in 2027 only, which is lower because most changes start in April. (Annexure I.)</span><span class="src"><b>EconomyNext</b><a href="https://economynext.com/sri-lankas-2027-budget-unveils-middle-class-tax-relief-eyes-record-capital-spending-290046/">Sri Lanka's 2027 budget unveils middle class tax relief, eyes record capital spending</a></span><span class="src"><b>Daily Mirror</b><a href="https://www.dailymirror.lk/top-story/Budget-2027-Key-proposals-on-growth-welfare-and-development/155-354805">Budget 2027: Key proposals on growth, welfare and development</a></span></div></div>
+    <div class="check"><span class="chip ok">True</span><div><span class="claim">"Primary surplus of 2.3% of GDP."</span><span>Correct with cyclone costs included (2.9% without). In plain terms: before paying interest, the government plans to collect more than it spends. Interest then turns that into a deficit.</span><span class="src"><b>Ada Derana</b><a href="https://adaderana.lk/news/251637">Day two of debate on second reading of 2027 Budget in parliament today</a></span></div></div>
+    <div class="check"><span class="chip warn">Needs context</span><div><span class="claim">"Government spending for 2027 is Rs 4.99 trillion."</span><span>This is the amount in the Appropriation Bill, the part of spending Parliament approves ministry by ministry (Rs 3,240 billion running costs plus Rs 1,753 billion capital). It is smaller than the Rs 7.67 trillion total because it leaves out costs paid under other laws, chiefly interest on debt. We confirmed the figure in the bill itself.</span><span class="src"><b>Sunday Times</b><a href="https://www.sundaytimes.lk/260927/news/appropriation-bill-2027-npp-estimates-expenditure-at-over-rs-4992-billion-658465.html">Appropriation Bill 2027: NPP estimates expenditure at over Rs. 4992 billion</a></span></div></div>  </div>
+</section>
+
+<footer>
+  <h3>Sources and method</h3>
+  <p class="small">Main source: the official Budget Speech 2027, English text. Every figure on this page was read in the speech itself, in these parts: the opening and fiscal targets (sections 1 to 3), social protection (section 20), salaries, pensions, tax and borrowing (sections 35 to 38), the passages on highways, loans and solar batteries, Annexures I to IV, and the tax part of Annexure V. The other sector chapters were not read line by line and are not summarised here. We read the Treasury's own copy. News reports were used to find claims, and each claim was then compared with the speech. Ministry figures come from the Appropriation Bill for 2027, and the 2026 comparisons and economic assumptions from the Treasury's Draft Budget Estimates 2027 (Volume I summary tables only; the three volumes run to about 1,470 pages and were not read in full). Debate and vote dates come from Parliament's published programme.</p>
+  <ul class="small">
+    <li><a href="https://www.treasury.gov.lk/web/budget-speeches/section/2027">Budget Speech 2027, Treasury</a></li>
+    <li><a href="https://www.treasury.gov.lk/web/budget-estimates/section/budget%20estimates%20-2027">Draft Budget Estimates 2027, Treasury</a></li>
+    <li><a href="https://www.parliament.lk/en/budget-2027/parliamentary-programme-for-the-appropriation-bill">Parliament's programme for the budget debate</a></li>
+    <li><a href="https://www.treasury.gov.lk/api/file/307e74fb-f2d6-4858-beb1-ddd23b59b678">Appropriation Bill 2027, Treasury PDF</a></li>
+    <li><a href="https://www.dailymirror.lk/breaking-news/Sri-Lanka-Budget-2027-explained-the-key-numbers-at-a-glance/108-354804">Daily Mirror: key numbers</a> (matches the official table)</li>
+    <li><a href="https://adaderana.lk/news/251513">Ada Derana: live updates</a></li>
+    <li><a href="https://economynext.com/sri-lankas-2027-budget-unveils-middle-class-tax-relief-eyes-record-capital-spending-290046/">EconomyNext: tax relief and capital spending</a></li>
+    <li><a href="https://www.themorning.lk/articles/ZTA97tYbXJwU6ipek4LG">The Morning</a> and <a href="https://www.sundaytimes.lk/260927/news/appropriation-bill-2027-npp-estimates-expenditure-at-over-rs-4992-billion-658465.html">Sunday Times</a>: Appropriation Bill figure</li>
+  </ul>
+  <p class="small muted">This page is not financial or tax advice.</p>
+</footer>
+
+</div>
+
+</body>
+</html>
