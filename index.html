@@ -113,6 +113,23 @@ td.save{font-weight:650;color:var(--in)}
 footer{border-top:1px solid var(--line);padding-top:40px;display:flex;flex-direction:column;gap:12px;scroll-margin-top:16px}
 footer ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:4px}
 /* hover only where a real pointer exists, so taps on phones do not leave it stuck */
+/* phones: slightly smaller running text, wider side margins, and more air between a heading and its text */
+@media (max-width:560px){
+  body{font-size:1rem}
+  .wrap{gap:32px;padding-block:28px 56px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+  section+section,footer{padding-top:32px}
+  .lede{font-size:1.1rem}
+  .changes>div{gap:4px;padding-block:18px}
+  .changes h3+span{font-size:.95rem;line-height:1.55}
+  .fine li{padding-block:16px;font-size:.9375rem}
+  .fine b{margin-bottom:4px}
+  .check{gap:10px;padding-block:20px}
+  .check>div{gap:6px}
+  .claim{font-size:1rem;line-height:1.4}
+  .check>div>span:not(.claim):not(.src){font-size:.95rem;line-height:1.55}
+  .key li{gap:8px;font-size:.9375rem}
+  table{font-size:.9375rem}
+}
 @media (hover:hover) and (pointer:fine){
   .toc a:hover{color:var(--ink);text-decoration:underline}
   .src a:hover{color:var(--accent);text-decoration-color:currentColor}
