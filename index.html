@@ -84,7 +84,9 @@ header{display:flex;flex-direction:column;gap:16px}
 .key{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
 .key li{display:grid;grid-template-columns:12px 3.4rem minmax(0,1fr);gap:10px;align-items:baseline;font-size:.95rem;line-height:1.5}
 .key s{width:12px;height:12px;border-radius:2px;display:block;align-self:start;margin-top:.42em;text-decoration:none}
-.key b{font-family:var(--display);font-size:1.02rem;font-weight:650;font-variant-numeric:tabular-nums}
+/* the two strip labels read as captions for the charts, not as headings competing with the section title */
+.duo h3{font-family:var(--body);font-weight:500;font-size:1rem;line-height:1.4;letter-spacing:0}
+.key b{font-family:var(--display);font-size:1.02rem;font-weight:600;font-variant-numeric:tabular-nums}
 /* change list: date on the left, change on the right, like a timetable */
 .changes{display:flex;flex-direction:column}
 .changes>div{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:2px 24px;border-top:1px solid var(--line);padding-block:14px}
@@ -133,7 +135,6 @@ footer ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:4p
   .claim{font-weight:600}
   section>h3{margin-top:24px}
   section>h3+.scroll,section>h3+.fine,section>h3+.changes{margin-top:-4px}
-  .duo h3{font-size:1.1rem}
   .lede{font-size:1.1rem}
   .changes>div{gap:4px;padding-block:18px}
   .changes h3+span{font-size:.95rem;line-height:1.55}
