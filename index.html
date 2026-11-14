@@ -118,7 +118,9 @@ footer ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:4p
 @media (max-width:560px){
   body{font-size:1rem}
   .wrap{gap:32px;padding-block:28px 56px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-  section+section,footer{padding-top:32px}
+  /* section breaks must outrank the 1px rules between items, which look the same in one column */
+  section+section,footer{border-top:2px solid var(--ink);padding-top:28px;margin-top:20px}
+  h2{font-size:1.65rem}
   .lede{font-size:1.1rem}
   .changes>div{gap:4px;padding-block:18px}
   .changes h3+span{font-size:.95rem;line-height:1.55}
